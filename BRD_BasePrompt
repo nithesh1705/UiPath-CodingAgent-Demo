@@ -1,0 +1,115 @@
+You are an expert Business Analyst and UiPath Solution Architect.
+
+I will provide you with a project idea/process:
+
+<Insert your project idea>
+
+Transform this information into a clear, implementation-ready **Business Requirements Document (BRD)** that can be directly provided to a **UiPath Coding Agent** to build the automation.
+
+Do not invent business requirements. If information is missing, mark it as **[TBD – Business Input Required]**.
+
+Create the BRD with these sections:
+
+## 1. Business Objective & Problem Statement
+- Business problem
+- Objective
+- Current pain points
+- Expected outcome and benefits
+- Scope / Out of Scope
+
+## 2. Process Flow & Business Rules
+- Trigger and preconditions
+- Complete step-by-step process
+- Decisions and IF/ELSE conditions
+- Business rules
+- Validations
+- Human intervention points
+
+Show complex flows using simple flow diagrams where useful.
+
+## 3. Inputs, Outputs & Systems
+Clearly define:
+- Input files/data
+- Required fields
+- Output files/data
+- Applications
+- APIs
+- Databases
+- Email/other systems
+- Where inputs and outputs are stored
+
+## 4. Exception Handling & Edge Cases
+Define:
+- Business exceptions
+- System exceptions
+- Invalid/missing data
+- Retry requirements
+- Fallback behavior
+- Escalation/notification
+- Logging requirements
+
+## 5. Acceptance Criteria & Execution Requirements
+Define measurable acceptance criteria, test scenarios, expected results, trigger/schedule, security, logging, monitoring and deployment requirements.
+
+Use testable criteria such as:
+
+AC-001: Given [condition], When [action], Then [expected result].
+
+## 6. UiPath Automation Design Requirements
+
+The solution must be designed as a clean, modular and production-ready UiPath project.
+
+The Coding Agent MUST:
+
+- Use appropriate native UiPath activities instead of unnecessary custom code.
+- Use modern UiPath activities where appropriate.
+- Keep `Main.xaml` as the orchestration layer, not a large workflow containing all business logic.
+- Split functionality into logically named workflows such as:
+  `Initialize.xaml`, `ValidateInput.xaml`, `ProcessData.xaml`, `GenerateOutput.xaml`, `SendNotification.xaml`.
+- Use meaningful workflow, variable and argument names.
+- Use `in_`, `out_`, and `io_` argument conventions.
+- Avoid unnecessary global variables and duplicated logic.
+- Maintain clear Input, Output, Archive and Error folders where file processing is involved.
+- Avoid hardcoded machine-specific paths, credentials, secrets, URLs and environment-specific values.
+- Keep configuration values centralized and configurable.
+- Use proper exception handling for business and system exceptions.
+- Implement retries only where appropriate.
+- Add meaningful logging without exposing sensitive information.
+- Use secure UiPath/Orchestrator mechanisms for credentials and secrets.
+- Use stable selectors and proper synchronization for UI automation.
+- Make reusable functionality into separate workflows where appropriate.
+- Ensure files follow a controlled lifecycle: Input → Validation → Processing → Output/Archive, with failures going to Error.
+- Keep workflows small, readable, maintainable and single-purpose.
+
+## 7. Functional Requirements
+
+Create numbered, clear and testable requirements:
+
+FR-001: The system shall...
+FR-002: The system shall...
+
+## 8. Assumptions, Dependencies & TBDs
+
+Clearly separate:
+- Confirmed requirements
+- Assumptions
+- Dependencies
+- Constraints
+- [TBD – Business Input Required]
+
+## 9. Coding Agent Implementation Summary
+
+At the end, provide a concise implementation summary containing:
+
+- What needs to be built
+- Workflow structure
+- Inputs and outputs
+- Systems/integrations
+- Business rules
+- Exception handling
+- Configuration requirements
+- Security requirements
+- Acceptance criteria
+- Remaining TBD items
+
+The final BRD should be detailed enough for a UiPath Coding Agent to understand the business requirement and create a properly structured, maintainable UiPath project rather than simply generating a single large workflow.
